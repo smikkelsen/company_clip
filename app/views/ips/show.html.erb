@@ -1,0 +1,24 @@
+<div class='panel'>
+
+  <div class='panel-insert'>
+
+    <div id='clips'>
+      <h2>Your IP: <%= @ip.address %></h2>
+      <%= nested_form_for @ip, :remote => true do |f| %>
+          <%= f.link_to_add image_tag('add-icon.png'), :clips %>
+          <%= f.fields_for :clips do |c| %>
+              <%= c.text_area :text, :style => 'width:99%;height:150px;', :class => 'clip-text' %>
+              <br>
+              <%= c.link_to_remove image_tag 'delete-icon24x24.png', :style => 'float:right;' %>
+              <% unless c.object.created_at.nil? %>
+                  <span class='strong'>Created:</span> <%= c.object.created_at.strftime("%a, %b %d %l:%M %p") %>
+                  <span class='strong'>Updated:</span> <%= c.object.updated_at.strftime("%a, %b %d %l:%M %p") %>
+              <% end %>
+          <% end %>
+          <!--<%= f.submit 'Save' %>-->
+      <% end %>
+
+    </div>
+  </div>
+</div>
+

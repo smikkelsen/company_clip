@@ -1,0 +1,54 @@
+@import 'pages';
+//@import 'tipTip';
+@import 'windows';
+
+// Global Styles
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+a {
+  text-decoration: none;
+}
+
+//a {
+//  color: #024378;
+//  font-weight: bold;
+//  text-decoration: none;
+//
+//  &:hover {
+//    color: #04569A;
+//    text-decoration: underline;
+//  }
+//}
+
+.flt-lft {
+  float: left;
+}
+
+.flt-rt {
+  float: right;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.clickable {
+  cursor: pointer;
+  cursor: hand;
+}

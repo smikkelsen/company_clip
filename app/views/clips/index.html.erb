@@ -1,0 +1,17 @@
+<div class='panel'>
+
+  <div class='panel-insert'>
+    <h1>Clips</h1>
+
+
+    <% @clips.each do |clip| %>
+        <tr>
+          <div class="clip"><%= clip.text %></div>
+        </tr>
+    <% end %>
+
+    <br/>
+
+    <%= link_to 'New Clip', new_clip_path %>
+  </div>
+</div>

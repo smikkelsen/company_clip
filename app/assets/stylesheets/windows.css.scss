@@ -1,0 +1,90 @@
+@mixin box_shadow($size, $color) {
+  -moz-box-shadow: 3px 3px $size $color;
+  -webkit-box-shadow: 3px 3px $size $color;
+  box-shadow: 3px 3px $size $color;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=$size, Direction=135, Color='$color')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=$size, Direction=135, Color='$color');
+}
+
+@mixin gradient($start_color, $end_color) {
+  background: #999; /* for non-css3 browsers */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$start_color', endColorstr='$end_color'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from($start_color), to($end_color)); /* for webkit browsers */
+  background: -moz-linear-gradient(top, $start_color, $end_color); /* for firefox 3.6+ */
+}
+
+@mixin border_radius($radus) {
+  -moz-border-radius: $radus; /* Firefox */
+  -webkit-border-radius: $radus; /* Safari, Chrome */
+  border-radius: $radus; /* CSS3 */
+}
+
+h2 {
+  margin-bottom: 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.collapse {
+  cursor: hand;
+  cursor: pointer;
+}
+
+.panel-insert-table {
+  box-sizing: border-box;
+
+  margin-left: 0 15px;
+  width: 100%;
+
+  table {
+    margin-left: 15px;
+  }
+}
+
+.panel-insert {
+  margin: 15px;
+}
+
+.panel {
+  margin: 0 0 16px 0;
+  width: 100%;
+  padding: 0;
+  border: 1px solid #434344;
+  color: #3b3b3b;
+  font-size: 1em;
+
+  @include border_radius(10px);
+  @include gradient(#c2c2c2, #686868);
+  @include box_shadow(20px, #141213);
+
+}
+
+.sub-items-col {
+  color: #FFF;
+
+  a {
+    color: #FFF;
+  }
+
+}
+
+.icon-col {
+  padding: 0 4px 0 0;
+  text-align: right;
+}
+
+.items-col {
+  color: #383838;
+  text-align: left;
+  padding: 0 15px 0 0;
+  //font-weight: 650;
+  a {
+    color: #055f5f;
+  }
+
+}
+
+.settings-panel {
+  margin: 6px 0;
+}
